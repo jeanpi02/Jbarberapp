@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirm Your Details - Elite Bookings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c8c6c5",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary-fixed": "#ffdea5",
+                    "outline": "#747878",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container": "#eeeeee",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary-container": "#785a1a",
+                    "secondary": "#775a19",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#c8c6c5",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-fixed": "#002204",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-surface": "#1a1c1c",
+                    "surface-tint": "#5f5e5e",
+                    "secondary-container": "#fed488",
+                    "tertiary-fixed": "#a3f69c",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#005312",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-dim": "#dadada",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1c1b1b",
+                    "on-surface-variant": "#444748",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-background": "#1a1c1c",
+                    "background": "#f9f9f9",
+                    "tertiary-container": "#002204",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface": "#f9f9f9",
+                    "primary": "#000000",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-fixed": "#261900",
+                    "on-tertiary-container": "#469446",
+                    "tertiary-fixed-dim": "#88d982",
+                    "on-primary-container": "#858383",
+                    "surface-container-highest": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .form-input-focus:focus {
+            border-color: #e9c176; /* Royal Gold / Secondary Fixed Dim */
+            box-shadow: 0 0 0 1px #e9c176;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface shadow-sm dark:shadow-none docked full-width top-0 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional minimalist logo icon for a high-end luxury booking brand. The logo features sharp geometric lines in black and gold on a clean white background. The aesthetic is modern corporate, sophisticated, and trustworthy, with high-key lighting and a sense of premium architectural order." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-7UYr1mErasGQPqVzRUetm9UavZVlx6fn0EqK2cDbYpufTIMGdmc_0u5JE80OVKkZi56lvrnurFFYWrDXaMCalbclUp-7oT4DgBJI4kLSScO8vwDqzRFFalGRDMuCs677Y1jNqcQz5i3RdoK5qJ0Wah6Y3HQ2-KhKX53DdSTQ0lY9fv7Bjox_YlJIShODYp2lMkvDjcBgZKQyIq4ECWqORAeItGrakv3USkBa9aLbvBjAruqQdD17"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Elite Bookings</span>
+</div>
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-8 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[800px] mx-auto">
+<!-- Booking Flow Progress / Back Button -->
+<div class="mb-8 flex items-center gap-2">
+<button class="flex items-center text-on-surface-variant hover:text-primary transition-colors py-2 group">
+<span class="material-symbols-outlined mr-1 transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-md text-label-md">Back to Schedule</span>
+</button>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 text-primary">Confirm your details</h1>
+<!-- Summary of Booking (The Bento Summary Card) -->
+<section class="mb-10 bg-white rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#E5E5E5]">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-6">Reservation Summary</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Date &amp; Time</p>
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Tuesday, Oct 24 • 10:30 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="content_cut">content_cut</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Service</p>
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Executive Grooming Session</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-xl overflow-hidden">
+<img class="w-10 h-10 rounded-lg object-cover" data-alt="A portrait of a highly professional, stylish grooming specialist in a high-end salon setting. The lighting is soft and cinematic, highlighting the clean minimalist interior design. The individual is dressed in modern corporate attire, projecting confidence and premium craftsmanship in a luxury environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKHSLH6HPpAZl29EiREjf_oLeJjY6EMsZyXlGUn4dS6u6xsA-07o_2koA3UKriauoITGAyQDd7mMXJHWzkCnzBjfc3j7vJ3_t-4Ul9MnDhcVBAH8kHUob0c0gJhHsgsvhnaRKxJ_tvhPjDyi88yWN_RgmL1OmKD2Ysltedvod38nYLxJ8tZROa9_MtVGPqA4O4KCQXj1Ed-aMUC4xrpZcHv16sVx9wlFoY4BCALmuY4pxjlfL8h_TO"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Professional</p>
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Marcus Thorne</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Total Price</p>
+<p class="font-body-lg text-body-lg font-bold text-on-surface">$120.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Information Form -->
+<form class="space-y-8" id="booking-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block px-1" for="fullname">Full Name *</label>
+<input class="w-full h-12 px-4 rounded-xl bg-[#F4F4F5] border border-transparent form-input-focus transition-all font-body-md text-body-md placeholder:text-outline-variant" id="fullname" placeholder="Enter your full name" required="" type="text"/>
+</div>
+<!-- Phone Number -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block px-1" for="phone">Phone Number *</label>
+<input class="w-full h-12 px-4 rounded-xl bg-[#F4F4F5] border border-transparent form-input-focus transition-all font-body-md text-body-md placeholder:text-outline-variant" id="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+</div>
+<!-- Email -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface block px-1" for="email">Email Address (Optional)</label>
+<input class="w-full h-12 px-4 rounded-xl bg-[#F4F4F5] border border-transparent form-input-focus transition-all font-body-md text-body-md placeholder:text-outline-variant" id="email" placeholder="email@example.com" type="email"/>
+</div>
+<!-- Notes -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface block px-1" for="notes">Notes/Observations (Optional)</label>
+<textarea class="w-full p-4 rounded-xl bg-[#F4F4F5] border border-transparent form-input-focus transition-all font-body-md text-body-md placeholder:text-outline-variant resize-none" id="notes" placeholder="Any special requests or details we should know?" rows="4"></textarea>
+</div>
+</div>
+<!-- Terms & Privacy -->
+<p class="text-label-sm font-label-sm text-on-surface-variant text-center max-w-md mx-auto">
+                    By clicking "Confirm Reservation", you agree to our 
+                    <a class="text-secondary underline" href="#">Terms of Service</a> and 
+                    <a class="text-secondary underline" href="#">Privacy Policy</a>.
+                </p>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full py-4 bg-secondary-fixed-dim hover:bg-secondary-fixed text-on-secondary-fixed font-bold text-body-lg rounded-xl transition-all active:scale-[0.98] shadow-lg flex items-center justify-center gap-2" type="submit">
+                        Confirm Reservation
+                        <span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-base bg-primary-container dark:bg-surface-container-high text-on-primary-container dark:text-on-surface">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">Elite Bookings</span>
+<p class="font-body-md text-body-md opacity-60">© 2024 Elite Bookings. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-gutter">
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<!-- Interactive script for form micro-interactions -->
+<script>
+        document.getElementById('booking-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            // Simple visual feedback for submission
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Processing...';
+            
+            setTimeout(() => {
+                btn.innerHTML = 'Reservation Confirmed!';
+                btn.classList.replace('bg-secondary-fixed-dim', 'bg-tertiary-fixed');
+                btn.classList.add('text-on-tertiary-fixed');
+                
+                // Show success visual state (mock)
+                confettiEffect();
+            }, 1500);
+        });
+
+        // Lightweight atmospheric effect function
+        function confettiEffect() {
+            console.log('Success! Imagine premium gold confetti here.');
+        }
+
+        // Handle focus states for high contrast interaction
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.add('text-secondary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.remove('text-secondary');
+            });
+        });
+    </script>
+</body></html>

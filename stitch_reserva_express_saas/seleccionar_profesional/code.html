@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Bookings - Select Professional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .booking-focus-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed": "#ffdea5",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container": "#eeeeee",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-container": "#785a1a",
+                        "secondary": "#775a19",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-fixed": "#002204",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#5f5e5e",
+                        "secondary-container": "#fed488",
+                        "tertiary-fixed": "#a3f69c",
+                        "tertiary": "#000000",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#005312",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1c1b1b",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-background": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#002204",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface": "#f9f9f9",
+                        "primary": "#000000",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-secondary-fixed": "#261900",
+                        "on-tertiary-container": "#469446",
+                        "tertiary-fixed-dim": "#88d982",
+                        "on-primary-container": "#858383",
+                        "surface-container-highest": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface shadow-sm dark:shadow-none fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist logo for a luxury barber shop named Elite Bookings, featuring clean black and white lines and a refined aesthetic. The lighting is sophisticated and professional, reflecting a high-end SaaS platform for premium service management. Soft shadows and a polished finish emphasize trustworthiness and elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAippPCk5zRIExaf3Qx0bHpFrOtCUzEywmFhBiRdQISi6miBDyu2EYCrqHDIHioQNhVR2qSS1CGMCR1rI4hN5ViNO8Hk1h33f0B3j8R4mUxX5MB3d3sISoOn3K7cB-QAjszoSfkKYPgQz7MbrxZAycWx18jRWSFXTxBmjpnVkJmF50fYqCWyxYXQhv68hH2iYtk7OzG4LpHWXM_2eHXFkMtF-gBvsSYmZXBO74ce3E3gjGRlWRmyrKc"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Elite Bookings</span>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity p-2 active:scale-95 transition-transform">
+                menu
+            </button>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-margin-mobile md:px-margin-desktop">
+<div class="booking-focus-container">
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Select your Professional</h1>
+<p class="text-on-surface-variant font-body-md">Choose the expert that best fits your style and schedule.</p>
+</div>
+<!-- Professionals Grid -->
+<div class="grid grid-cols-1 gap-8">
+<!-- Professional Card 1: Marco -->
+<div class="glass-card rounded-[24px] border border-outline-variant p-gutter shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col md:flex-row gap-gutter relative">
+<div class="w-full md:w-48 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-end studio portrait of a master barber named Marco, looking authoritative yet welcoming. He has a perfectly groomed beard and wears a clean, professional black apron over a white shirt. The studio lighting is warm and directional, creating deep blacks and crisp highlights that suggest a luxury grooming experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx8N3DNCe7QUnH0kCs7l_PvFc9-hzqYB-Cva1GfXAgLYl7ZbAE4UasFK9KvaJoZ1QmtPrdQtY7KrYEGoWaKxzSOo68My6loDYHo3dmOWArf6tiqlrxlBRi3HTlqXfBGiQQDlACgcvVj3O4diPN00A-nBVcd24aMdQBYyS-axdT6rj6yMNSlSnlkIJii5XdgpRFofWj4jYDKWz39s8m-R6z0X7kloXosKiU5RFEmBo7bZg-Bu_7rBrI"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Marco 'The King'</h2>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Master Barber</p>
+</div>
+<div class="flex items-center gap-1 bg-secondary-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-on-secondary-container">5.0</span>
+</div>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span class="font-body-md">10 years experience</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="font-body-md">Next available: <span class="text-primary font-bold">Today 4:00 PM</span></span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+                                Select Professional
+                            </button>
+</div>
+</div>
+</div>
+<!-- Professional Card 2: Alex -->
+<div class="glass-card rounded-[24px] border border-outline-variant p-gutter shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col md:flex-row gap-gutter relative">
+<div class="w-full md:w-48 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a stylish hair expert named Alex in a bright, modern salon setting. Alex has a contemporary, sharp haircut and wears a sleek charcoal grey stylist vest. The lighting is high-key and airy, with soft shadows and a neutral color palette that emphasizes clean lines and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA81oxRriAiLAVl17VUUzgmXt5Re19qt6D-TQH8VklIzoVNEB1HJZuRrupyWFsu7tXhuEc8xfcze3tcdj6sz_nlmYWwEAxPN7Sh321yaWk8DsYnrBc4uSQZC6QLSDn_Z5DqoGSCb18TJ4a59R_8U9su55CCwukOHWvif8jH_mNx2HVDKTU3mCXWkV50QG-txgwN5IU_sbkDhwZ1RV80EfKJMTBlt4wuxG9rPHKPztsjXwp9RxmtQF3H"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Alex 'Sharp'</h2>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Stylist Expert</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-outline text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-on-surface">4.8</span>
+</div>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span class="font-body-md">5 years experience</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="font-body-md">Next available: <span class="text-primary font-bold">Tomorrow 10:00 AM</span></span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+                                Select Professional
+                            </button>
+</div>
+</div>
+</div>
+<!-- Professional Card 3: Sofia -->
+<div class="glass-card rounded-[24px] border border-outline-variant p-gutter shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col md:flex-row gap-gutter relative">
+<div class="w-full md:w-48 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A portrait of a creative barber named Sofia with an artistic flair. She has styled hair with a subtle edge and wears a professional denim apron. The background is a minimalist studio with soft, diffused daylight that highlights her friendly yet expert expression. The image color palette is dominated by soft greys and deep indigos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6B1AWTVVUBWR2pDgijUd6mMVD7C6VYt-WHM7WB7ay2_yt3rRx4eyZA4abIXOxFuBrm-h162xETcxxIdtXg2H1MFjj5FPfo2pRffJrKqIS0Dc7uc8e-rHEBnWQX9K5WCNChsvTpm5gI60UDTMJyMBv-0l9qa5OKM9E6TH033VYarLJ-lZgwiadJKvXsQrfKXQ2BkiDvPMN0K9q__SditH1X119AhFxiSOBCXEYdEX5yWzHtJWCn6Mz"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Sofia 'Fade'</h2>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Creative Cuts</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-outline text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-on-surface">4.9</span>
+</div>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span class="font-body-md">7 years experience</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="font-body-md">Next available: <span class="text-primary font-bold">Monday</span></span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+                                Select Professional
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center py-base px-gutter bg-surface dark:bg-surface-container shadow-lg rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed font-bold hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Professionals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">content_cut</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-label-md text-label-md">Review</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-base bg-primary-container dark:bg-surface-container-high text-on-primary-container dark:text-on-surface relative">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-lg text-headline-lg text-primary mb-2">Elite Bookings</span>
+<p class="font-body-md text-body-md text-on-primary-container opacity-70">© 2024 Elite Bookings. All rights reserved.</p>
+</div>
+<div class="flex gap-gutter font-body-md text-body-md">
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for professional selection
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Select Professional')) {
+                button.addEventListener('click', function() {
+                    const name = this.closest('.glass-card').querySelector('h2').textContent;
+                    console.log(`Professional selected: ${name}`);
+                    
+                    // Visual feedback
+                    const originalText = this.textContent;
+                    this.textContent = 'Selected';
+                    this.classList.remove('bg-primary', 'bg-secondary-fixed');
+                    this.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        if (name.includes('Marco')) {
+                            this.classList.add('bg-secondary-fixed');
+                            this.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+                        } else {
+                            this.classList.add('bg-primary');
+                            this.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+                        }
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+</body></html>

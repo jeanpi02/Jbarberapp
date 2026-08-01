@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmed | Elite Bookings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c8c6c5",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary-fixed": "#ffdea5",
+                    "outline": "#747878",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container": "#eeeeee",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary-container": "#785a1a",
+                    "secondary": "#775a19",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#c8c6c5",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-fixed": "#002204",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-surface": "#1a1c1c",
+                    "surface-tint": "#5f5e5e",
+                    "secondary-container": "#fed488",
+                    "tertiary-fixed": "#a3f69c",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#005312",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-dim": "#dadada",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1c1b1b",
+                    "on-surface-variant": "#444748",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-background": "#1a1c1c",
+                    "background": "#f9f9f9",
+                    "tertiary-container": "#002204",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface": "#f9f9f9",
+                    "primary": "#000000",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-fixed": "#261900",
+                    "on-tertiary-container": "#469446",
+                    "tertiary-fixed-dim": "#88d982",
+                    "on-primary-container": "#858383",
+                    "surface-container-highest": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-check-anim {
+            animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden">
+<!-- Confetti Overlay -->
+<canvas class="confetti-canvas" id="confetti"></canvas>
+<!-- Top App Bar (Shell Component) -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-surface dark:bg-surface shadow-sm h-16 w-full">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="text-white text-label-sm font-bold">BK</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Elite Bookings</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity p-2">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile flex flex-col items-center justify-center min-h-screen">
+<div class="max-w-[800px] w-full flex flex-col items-center">
+<!-- Success Icon -->
+<div class="success-check-anim mb-base">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[64px] md:text-[80px] text-on-secondary-container" style="font-variation-settings: 'wght' 600;">check_circle</span>
+</div>
+</div>
+<!-- Main Message -->
+<div class="text-center mb-10 fade-in-up" style="animation-delay: 0.2s;">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Booking Confirmed!</h2>
+<p class="text-on-surface-variant font-body-md">Your appointment has been successfully scheduled. See you soon!</p>
+</div>
+<!-- Summary Card (Bento Style Layout) -->
+<div class="w-full grid grid-cols-1 md:grid-cols-12 gap-gutter fade-in-up" style="animation-delay: 0.4s;">
+<!-- Business & ID Header Card -->
+<div class="md:col-span-12 glass-card rounded-[24px] p-8 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of professional barber tools including chrome scissors and a vintage gold-plated straight razor resting on a clean white marble surface. The lighting is bright and high-end, reflecting a luxury salon atmosphere with neutral tones and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8aNepdxsXX2w6NMQGK1kqb_km9L-VL2eunrlr95fpK5smMQ7eOKmU9-zqjlco_Iim4zgWuwu7tFa5tLSsXFQoRrQh6MkaFrKOpbIXN0BQ8xSo8N2-2I_BL0fL7TFWDiEaYbxK8gQH0OaIdpMsRAS54aoV4wKdN0r1K9Lz0fc-iu9tXspnhhTordoFDbtlmDqXa1OijqtPRLPizm4JYyamLXJJeIv2pRgqa0O4k-mMavgcYr3IisfL"/>
+</div>
+<div>
+<p class="text-label-md text-secondary-fixed-dim uppercase tracking-widest">Business</p>
+<h3 class="font-headline-md text-headline-md text-primary">Barber King</h3>
+</div>
+</div>
+<div class="bg-surface-container px-4 py-2 rounded-lg">
+<p class="text-label-sm text-on-surface-variant mb-1">Reservation ID</p>
+<p class="font-bold text-primary">#BK-7892</p>
+</div>
+</div>
+<!-- Professional & Service Detail -->
+<div class="md:col-span-7 glass-card rounded-[24px] p-8 shadow-sm space-y-8">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wide">Professional</p>
+<p class="font-headline-md text-headline-md text-primary">Marco 'The King'</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">content_cut</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wide">Service</p>
+<p class="font-headline-md text-headline-md text-primary">Classic Haircut</p>
+</div>
+</div>
+</div>
+<!-- Date & Time Detail -->
+<div class="md:col-span-5 glass-card rounded-[24px] p-8 shadow-sm bg-secondary-container/10 border-secondary-fixed/30 flex flex-col justify-center gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl">calendar_today</span>
+<div>
+<p class="text-label-sm text-on-surface-variant">Date</p>
+<p class="font-bold text-lg text-primary">Oct 24, 2024</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
+<div>
+<p class="text-label-sm text-on-surface-variant">Time</p>
+<p class="font-bold text-lg text-primary">4:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Map Integration -->
+<div class="md:col-span-12 h-48 rounded-[24px] overflow-hidden relative shadow-sm fade-in-up" style="animation-delay: 0.6s;">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A stylized minimalist map of a luxury metropolitan area with clean grey roads and golden highlights for landmarks. The aesthetic is modern and sophisticated, featuring soft drop shadows and an airy light-mode feel that complements the premium booking interface." data-location="Manhattan, New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCweicEy6d0wdxdhb-xvtfyTL2rXrfW3nFWDspI7LF0f4Jh8LDVkna92N694gRsGU8BLefyLKSuzI2VOLQyHLiCkABLCySVEMbjFrEi0j64POWH-d0ka68yD785u80N-x6plP_UFoVMkqS5cQ6PN-c6d7AY9VUl9Mr7xBAhZVwk6o6WKkIKOtsaV8c-a31bJvQsnYOwRpPtv_2yEdVdmauia4weqcSe98PJwTSmGx7fycOPBSWsbF_e"/>
+<div class="absolute bottom-4 left-4 z-20 text-white flex items-center gap-2">
+<span class="material-symbols-outlined">location_on</span>
+<p class="text-label-md font-medium">123 Royal Ave, Suite 400</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col md:flex-row gap-base mt-10 fade-in-up" style="animation-delay: 0.8s;">
+<button class="flex-1 h-14 bg-secondary-container text-on-secondary-container rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">event</span>
+                    Add to Calendar
+                </button>
+<button class="flex-1 h-14 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">home</span>
+                    Return to Home
+                </button>
+</div>
+<button class="mt-8 text-on-surface-variant font-label-md underline hover:text-primary transition-colors fade-in-up" style="animation-delay: 1s;">
+                View Details or Cancel
+            </button>
+</div>
+</main>
+<!-- Footer (Shell Component) -->
+<footer class="w-full py-margin-desktop px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-base bg-primary-container dark:bg-surface-container-high text-on-primary-container dark:text-on-surface">
+<p class="font-body-md text-body-md">© 2024 Elite Bookings. All rights reserved.</p>
+<div class="flex gap-gutter">
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Simple Confetti Animation
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const colors = ['#fed488', '#e9c176', '#775a19', '#000000', '#ffffff'];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = -10;
+                this.size = Math.random() * 8 + 4;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 5 + 3;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate((this.rotation * Math.PI) / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function initConfetti() {
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    particles.push(new Particle());
+                }, i * 20);
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                if (p.y > canvas.height) particles.splice(i, 1);
+            });
+            requestAnimationFrame(animate);
+        }
+
+        // Trigger confetti on load
+        window.addEventListener('load', () => {
+            initConfetti();
+            animate();
+        });
+
+        // Interactive states
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.95)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+            });
+        });
+    </script>
+</body></html>
